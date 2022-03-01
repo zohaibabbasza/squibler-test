@@ -17,18 +17,18 @@ The goal for this project is to create a collaborative editor using django rest 
 
 To use this template to start your own project:
 
-### Existing virtualenv
-
-If your project is already in an existing python3 virtualenv first install django by running
-
-    $ pip install -r requiremnts.txt
-    
 ### Creating virtualenv
     $ python3.9 -m venv venv \
     source venv/bin/activate
       
       
-After that just install the local dependencies, run migrations, and start the server.
+After that just install the local dependencies, install libraries.
+
+### Installing Libraries
+
+If your project is already in an existing python3 virtualenv first install django by running
+
+    $ pip install -r requiremnts.txt
 
     
 Then simply apply the migrations:
