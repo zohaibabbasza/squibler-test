@@ -1,0 +1,54 @@
+###########
+POST http://localhost:8000/dj-rest-auth/login/
+Content-Type: application/json
+
+{
+    "email":"za@za.com",
+    "password":"za"
+}
+
+#########
+GET http://localhost:8000/api/v1/sections/
+Content-Type: application/json
+Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+########
+GET http://localhost:8000/api/v1/sections/1/
+Content-Type: application/json
+Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+#########
+POST http://localhost:8000/api/v1/sections/
+Content-Type: application/json
+Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+
+{
+    "title": "This Is a test3",
+    "body": "asdasdasd",
+    "parent_id":19
+
+}
+########
+#########
+PUT http://localhost:8000/api/v1/sections/18/
+Content-Type: application/json
+Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+
+{
+    "title": "This Is a test3",
+    "body": "test"
+
+}
+########
+########
+POST http://localhost:8000/api/v1/sections/add-collaborator/
+Content-Type: application/json
+Authorization: Token 52396c4e7a0d5cb65d53672b1201f3d842fcae47
+
+{
+    "email":"zohaibabbasza@outlook.com",
+    "section_id":9
+
+}
+########
+DELETE  http://localhost:8000/api/v1/sections/9/
+Content-Type: application/json
+Authorization: Token 52396c4e7a0d5cb65d53672b1201f3d842fcae47
