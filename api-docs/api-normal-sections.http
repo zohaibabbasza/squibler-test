@@ -10,20 +10,20 @@ Content-Type: application/json
 #########
 GET http://localhost:8000/api/v1/sections/
 Content-Type: application/json
-Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+Authorization: Token 52396c4e7a0d5cb65d53672b1201f3d842fcae47
 ########
-GET http://localhost:8000/api/v1/sections/1/
+GET http://localhost:8000/api/v1/sections/24/
 Content-Type: application/json
-Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+Authorization: Token 52396c4e7a0d5cb65d53672b1201f3d842fcae47
 #########
 POST http://localhost:8000/api/v1/sections/
 Content-Type: application/json
-Authorization: Token aa456d3000b2dcb3b72678fd54fea020cd13bf02
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab
 
 {
-    "title": "This Is a test3",
+    "title": "Intro to platform (Menu Bar)",
     "body": "asdasdasd",
-    "parent_id":19
+    "parent_id":26
 
 }
 ########

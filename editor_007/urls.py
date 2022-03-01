@@ -6,4 +6,5 @@ urlpatterns = [
     path("dj-rest-auth/", include("dj_rest_auth.urls")),
     path("dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
     path("api/v1/", include("sections.urls")),
+    path("api/v1/", include("mp_nodes.urls")),
 ]

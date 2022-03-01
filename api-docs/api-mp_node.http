@@ -1,0 +1,43 @@
+###########
+POST http://localhost:8000/dj-rest-auth/login/
+Content-Type: application/json
+
+{
+    "email":"za@za.com",
+    "password":"za"
+}
+
+#########
+GET http://localhost:8000/api/v1/tree-sections/
+Content-Type: application/json
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab
+########
+GET http://localhost:8000/api/v1/tree-sections/11/
+Content-Type: application/json
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab
+#########
+POST http://localhost:8000/api/v1/tree-sections/
+Content-Type: application/json
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab
+
+{
+    "title": "Intro to platform (menu Bar)",
+    "body": "asdasdasd",
+    "parent_id":12
+
+}
+########
+########
+POST http://localhost:8000/api/v1/tree-sections/add-collaborator/
+Content-Type: application/json
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab
+
+{
+    "email":"zohaibabbasza@outlook.com",
+    "section_id":11
+
+}
+########
+DELETE  http://localhost:8000/api/v1/tree-sections/11/
+Content-Type: application/json
+Authorization: Token 3559c3c6ed986d631ff5da43f9b2d2db024269ab

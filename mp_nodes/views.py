@@ -5,16 +5,16 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
-from sections import models, serializers
-from .permissions import UserDeletePermission
+from mp_nodes import models, serializers
+from .permissions import UserDeletePermissionTree
 
 
-class SectionModelViewSet(viewsets.ModelViewSet):
+class TreeSectionModelViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication]
-    serializer_class = serializers.SectionSerializer
+    serializer_class = serializers.TreeSectionSerializer
 
     def get_queryset(self):
-        return models.Section.objects.filter(
+        return models.TreeSection.objects.filter(
             Q(collaboration__id__in=[self.request.user.id]) | Q(owner=self.request.user)
         )
 
@@ -23,7 +23,7 @@ class SectionModelViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.request.method in ["DELETE"]:
-            return [UserDeletePermission()]
+            return [UserDeletePermissionTree()]
         else:
             return [IsAuthenticated()]
 
@@ -31,7 +31,7 @@ class SectionModelViewSet(viewsets.ModelViewSet):
     def add_or_remove_collaborator(self, request):
         try:
             email = request.data["email"]
-            section = models.Section.objects.filter(id=request.data["section_id"])
+            section = models.TreeSection.objects.filter(id=request.data["section_id"])
             user = models.User.objects.filter(email=email)
             if section.exists() and user.exists():
                 section = section.first()

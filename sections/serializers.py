@@ -25,7 +25,7 @@ class SectionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Section
-        fields = "__all__"
+        exclude = ('created_date',)
 
     def create(self, validated_data):
         user = self.context["request"].user
